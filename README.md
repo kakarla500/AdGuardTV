@@ -50,5 +50,13 @@ Android restricts programmatic DNS changes on standard Ethernet/Wi-Fi interfaces
 - **Minimum SDK**: API 25 (Android 7.1)
 - **Permissions**: `INTERNET`, `ACCESS_NETWORK_STATE`, `BIND_VPN_SERVICE`
 
+## Development Process
+This project was developed using a modern **AI-assisted engineering workflow**. By collaborating with AI tools within the Android Studio environment, the development lifecycle was significantly accelerated:
+- **Architectural Direction**: The high-level design (VPN tunneling for DNS) was directed by the lead developer.
+- **Rapid Prototyping**: AI was used to scaffold the `VpnService` boilerplate and UI layouts.
+- **Quality Assurance**: Unit tests were generated and verified through collaborative debugging.
+
+This project stands as a testament to how human creativity and AI efficiency can work together to build functional, secure, and useful software in record time.
+
 ---
 *Developed by [kakarla500](https://github.com/kakarla500)*
