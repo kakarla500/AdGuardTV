@@ -1,3 +1,13 @@
+## Disclaimer
+
+This project is provided for educational and research purposes only.
+
+The purpose of this application is to demonstrate how Android's Private DNS feature can be configured programmatically and to help developers learn Android application development.
+
+The author does not encourage or support the use of this software for any unlawful activity or in violation of the terms of service of any network, service provider, or platform.
+
+Users are solely responsible for ensuring that their use of this software complies with all applicable laws, regulations, and service agreements. The author assumes no liability for any misuse or damages resulting from the use of this project.
+
 # AdGuard for TV
 
 A lightweight, open-source ad-blocking solution specifically designed for Android TV. This app enforces AdGuard DNS (or any custom DNS) system-wide on both Wi-Fi and Ethernet connections without requiring root access.
