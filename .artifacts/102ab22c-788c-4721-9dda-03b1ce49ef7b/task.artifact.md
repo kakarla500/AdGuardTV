@@ -1,5 +1,5 @@
-- `[ ]` Configure Git `user.name` and `user.email`
-- `[ ]` Initialize Git repository
-- `[ ]` Stage and commit project files
-- `[ ]` Add remote origin
-- `[ ]` Push to GitHub (requires user auth)
+- `[x]` Configure Git `user.name` and `user.email`
+- `[x]` Initialize Git repository
+- `[x]` Stage and commit project files
+- `[x]` Add remote origin
+- `[x]` Push to GitHub (requires user auth)

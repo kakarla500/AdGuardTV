@@ -3,6 +3,8 @@ package com.example.adguardtv
 import android.content.Context
 import android.content.SharedPreferences
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.mockito.ArgumentMatchers.anyInt
@@ -23,6 +25,9 @@ class DnsManagerTest {
 
     @Mock
     private lateinit var mockEditor: SharedPreferences.Editor
+
+    @Mock
+    private lateinit var mockListener: SharedPreferences.OnSharedPreferenceChangeListener
 
     @Before
     fun setup() {
@@ -56,5 +61,39 @@ class DnsManagerTest {
         `when`(mockPrefs.getString("custom_dns", null)).thenReturn("1.1.1.1")
         val result = DnsManager.getCustomDns(mockContext)
         assertEquals("1.1.1.1", result)
+    }
+
+    @Test
+    fun testRegisterAndUnregisterListener() {
+        DnsManager.registerPreferenceListener(mockContext, mockListener)
+        verify(mockPrefs).registerOnSharedPreferenceChangeListener(mockListener)
+
+        DnsManager.unregisterPreferenceListener(mockContext, mockListener)
+        verify(mockPrefs).unregisterOnSharedPreferenceChangeListener(mockListener)
+    }
+
+    @Test
+    fun testIsValidDnsIp() {
+        // Valid IPv4
+        assertTrue(DnsManager.isValidDnsIp("94.140.14.14"))
+        assertTrue(DnsManager.isValidDnsIp("1.1.1.1"))
+        assertTrue(DnsManager.isValidDnsIp("8.8.8.8"))
+        assertTrue(DnsManager.isValidDnsIp(" 94.140.14.14 "))
+
+        // Valid IPv6
+        assertTrue(DnsManager.isValidDnsIp("2a10:50c0::ad1:ff"))
+        assertTrue(DnsManager.isValidDnsIp("2001:4860:4860::8888"))
+
+        // Blank or null (considered valid as default DNS will be used)
+        assertTrue(DnsManager.isValidDnsIp(""))
+        assertTrue(DnsManager.isValidDnsIp("   "))
+        assertTrue(DnsManager.isValidDnsIp(null))
+
+        // Invalid IP addresses
+        assertFalse(DnsManager.isValidDnsIp("999.999.999.999"))
+        assertFalse(DnsManager.isValidDnsIp("256.1.1.1"))
+        assertFalse(DnsManager.isValidDnsIp("1.1.1.1.1"))
+        assertFalse(DnsManager.isValidDnsIp("invalid-dns.com"))
+        assertFalse(DnsManager.isValidDnsIp("https://dns.adguard.com"))
     }
 }

@@ -13,7 +13,7 @@ class AdGuardVpnService : VpnService() {
             return START_NOT_STICKY
         }
         
-        val customDns = intent?.getStringExtra(EXTRA_CUSTOM_DNS)
+        val customDns = intent?.getStringExtra(EXTRA_CUSTOM_DNS)?.trim()
         startVpn(customDns)
         return START_STICKY
     }
@@ -23,7 +23,7 @@ class AdGuardVpnService : VpnService() {
 
         try {
             val builder = Builder()
-                .setSession("AdGuard for TV")
+                .setSession("AdGuard TV")
                 .addAddress("10.0.0.2", 32)
             
             if (!customDns.isNullOrBlank()) {
@@ -33,10 +33,17 @@ class AdGuardVpnService : VpnService() {
                 builder.addDnsServer("94.140.15.15")
             }
             
-            vpnInterface = builder.establish()
-            DnsManager.setConnected(this, true)
+            val pfd = builder.establish()
+            if (pfd != null) {
+                vpnInterface = pfd
+                DnsManager.setConnected(this, true)
+            } else {
+                DnsManager.setConnected(this, false)
+                stopSelf()
+            }
         } catch (e: Exception) {
             e.printStackTrace()
+            DnsManager.setConnected(this, false)
             stopSelf()
         }
     }
@@ -50,6 +57,11 @@ class AdGuardVpnService : VpnService() {
         }
         DnsManager.setConnected(this, false)
         stopSelf()
+    }
+
+    override fun onRevoke() {
+        stopVpn()
+        super.onRevoke()
     }
 
     override fun onDestroy() {

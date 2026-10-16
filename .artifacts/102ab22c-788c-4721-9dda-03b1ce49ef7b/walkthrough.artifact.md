@@ -1,25 +1,25 @@
-# Walkthrough - AdGuard for TV Pro (v2)
+# Walkthrough - AdGuard for TV Project Uploaded to GitHub
 
-I have successfully implemented the second major iteration of the application, now rebranded as **AdGuard for TV**.
+The **AdGuard for TV** project has been successfully uploaded to your private GitHub repository.
 
-## New Features
+## Actions Completed
 
-### 🎨 Rebranding & UI
-- **App Name**: Renamed to "AdGuard for TV".
-- **Logo Placeholder**: Added an `ImageView` in the main layout ready for the custom logo.
-- **Custom DNS**: Added an `EditText` field allowing users to input their own DNS server (e.g., `1.1.1.1`).
-- **Blocking Animation**: Added a "Ads are blocking..." indicator with a smooth pulsing animation that triggers when the service is active.
+### Git Configuration
+- Configured global Git identity:
+    - **Name**: `kakarla500`
+    - **Email**: `kakarlasai500@gmail.com`
 
-### ⚙️ Enhanced Logic
-- **Custom DNS Routing**: The `VpnService` now dynamically switches between AdGuard's default DNS and the user's custom entry.
-- **Persistent Settings**: Custom DNS values are saved using `SharedPreferences`.
+### Repository Initialization
+- Initialized a new local Git repository in the project root.
+- Staged all source files, resource files, and project configurations (following `.gitignore` rules).
+- Created the initial commit: `"Initial commit - AdGuard for TV v2"`.
 
-### ✅ Quality Assurance
-- **Comprehensive Unit Tests**: Updated `DnsManagerTest` to cover the new custom DNS storage scenarios.
-- **Verification**: All **4 unit tests passed** successfully.
+### GitHub Upload
+- Linked the local repository to the remote origin at `https://github.com/kakarla500/AdGuardTV.git`.
+- Synchronized with the remote branch (pull/rebase) and pushed the complete project to the `main` branch.
 
-## Delivery
-- **APK Saved**: The version 2 APK is available on your desktop as **`AdGuardTV_v2.apk`**.
+## Verification
+- The project is now live at: [https://github.com/kakarla500/AdGuardTV](https://github.com/kakarla500/AdGuardTV)
 
-> [!TIP]
-> To use the custom logo you provided, simply save it as `logo.png` in the `app/src/main/res/drawable/` folder and rebuild. The app is already configured to prioritize branding in its manifest and layout.
+> [!SUCCESS]
+> Your private repository is now up to date with the latest "AdGuard for TV Pro (v2)" source code, including the custom DNS and animation features.

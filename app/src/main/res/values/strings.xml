@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">AdGuard for TV</string>
+    <string name="app_name">AdGuard TV</string>
+    <string name="enable_dns">Enable AdGuard DNS</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="enter_custom_dns_hint">Enter Custom DNS (optional)</string>
+    <string name="ads_blocking_status">Ads are blocking...</string>
+    <string name="app_logo_desc">App Logo</string>
 </resources>

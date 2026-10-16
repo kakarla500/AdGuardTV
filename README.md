@@ -1,9 +1,9 @@
-# AdGuard for TV
+# AdGuard TV
 
 A lightweight, open-source ad-blocking solution specifically designed for Android TV. This app enforces AdGuard DNS (or any custom DNS) system-wide on both Wi-Fi and Ethernet connections without requiring root access.
 
 ## How It Works
-Android restricts programmatic DNS changes on standard Ethernet/Wi-Fi interfaces for security. To bypass this, **AdGuard for TV** utilizes the Android **VpnService API**:
+Android restricts programmatic DNS changes on standard Ethernet/Wi-Fi interfaces for security. To bypass this, **AdGuard TV** utilizes the Android **VpnService API**:
 
 1. **Local VPN Tunnel**: The app creates a local-only VPN interface on the device.
 2. **DNS Redirection**: Instead of routing all data traffic to a remote server, it only intercepts DNS queries (port 53).
@@ -38,7 +38,7 @@ Android restricts programmatic DNS changes on standard Ethernet/Wi-Fi interfaces
    ```
 
 ## Usage
-1. Launch **AdGuard for TV** from your TV's app launcher.
+1. Launch **AdGuard TV** from your TV's app launcher.
 2. (Optional) Enter a custom DNS address if you don't want to use the default AdGuard servers.
 3. Click **Enable AdGuard DNS**.
 4. **Important**: When prompted, accept the Android VPN Connection Request. This is required for the app to redirect DNS traffic internally.
