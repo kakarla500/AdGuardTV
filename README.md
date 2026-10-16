@@ -91,8 +91,8 @@
 
 ## 📥 Installation
 
-The compiled, ready-to-install APK is available directly in this repository:
-- **[Download AdGuardTV.apk](AdGuardTV.apk)**
+The compiled, ready-to-install APK is available on the [Releases](https://github.com/kakarla500/AdGuardTV/releases) page:
+- **[Download AdGuardTV.apk (v1.0.0)](https://github.com/kakarla500/AdGuardTV/releases/download/v1.0.0/AdGuardTV.apk)**
 
 ### Method 1: Install via Wireless ADB (Recommended)
 1. On your Android TV, navigate to **Settings > Device Preferences > About**.
